@@ -18,7 +18,7 @@ function changeText(label) {
 }
 
 function animatedText(label) {
-  const text = document.querySelectorAll("b");
+  const text = label.querySelectorAll("b");
   let i = 0;
   const print = setInterval(() => {
     text[i].classList.toggle("zoom");

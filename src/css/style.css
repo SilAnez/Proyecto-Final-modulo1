@@ -236,8 +236,7 @@ li{
     position: sticky;
     bottom: 20px;
     left: 100%;
-    z-index: 30;
-    overflow: hidden;
+    z-index: 30;    
 }
 
 .footer .icon{
