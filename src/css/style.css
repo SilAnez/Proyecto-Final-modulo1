@@ -1,0 +1,513 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* variables */
+:root {
+    --primary-color: darkgreen;
+    --secundary-color: lightgreen;
+
+    --mobile-font : 13px;
+    --mobile-font-weight: 400;
+
+    --desktop-font : 16px;
+    --desktop-font-weight: 400;
+
+}
+
+/* inicio formateo */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Poppins;
+}
+
+body.dark {
+    background-color: black;
+    color: white;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: inline-block;
+}
+
+button {
+    border: none;
+    color: inherit;
+    display: inline-block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    font-size: 20px;
+    /* tamaño de los iconos */
+    width: 20px;
+    /* ancho de los imagen */
+}
+
+/* estilos para la animacion del titulo*/
+b{
+    display: inline-block;
+    letter-spacing: -.5rem;
+    cursor: pointer;
+    transition: .5s;
+    transition-delay: .5s;
+}
+
+b:hover{
+    color: var(--primary-color); 
+    text-shadow: -2.5px -2.5px -2.5px var(--secundary-color);
+    transform: scale(1.25);
+    transition: transform .5s;
+ }
+
+ b.zoom{
+    color: var(--primary-color); 
+    text-shadow: -2.5px -2.5px -2.5px var(--secundary-color);
+    transform: scale(1.25);
+    transition: transform .5s;
+ }
+
+u{
+    display: inline-block;
+    width: .25rem;
+}
+
+p,
+li{
+    font-size: var(--mobile-font);
+    font-weight: var(--mobile-font-weight);
+}
+
+/* fin de estilos para la animacion del titulo*/
+
+/* fin del formateo */
+
+/* clases */
+
+.header iframe {
+    height: 100vh;
+    width: 100%;
+    max-width: 1200px;
+    position: fixed;
+    top: 0;
+}
+
+.header__nav {
+    background-color: var(--secundary-color);
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; /* iconos no tan pegados a los bordes*/
+    position: fixed;
+    top: 0;
+    z-index: 20;
+}
+
+.dark .header__nav {
+    background-color: var(--primary-color);
+}
+
+/* formateo al contenedor para espacio entre iconos */
+.nav__start,
+.nav__center,
+.nav__end {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main {
+    position: relative;
+    z-index: 10;
+}
+
+.section {
+    height: 100vh;
+    max-height: 700px;
+    padding: 70px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.front>* {
+    text-align: center;
+}
+
+.about iframe {
+    height: 50%;
+}
+
+.hard__skills {
+    position: relative;
+    height: 65%;
+    width: 100%;
+}
+
+.slider__skills {
+    height: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.hard__skills button {
+    background-color: var(--secundary-color);
+    position: absolute;
+    /* posicionamiento con respecto al contenedor mas cercano */
+    top: 50%;
+    width: 25px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.dark .hard__skills button {
+    background-color: var(--primary-color);
+}
+
+.btn__prev {
+    left: 1%;
+}
+
+.btn__next {
+    right: 1%;
+}
+
+/* splider styles */
+.splide{
+    padding: 50px;
+}
+
+.splide__slide{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 10px;
+}
+
+.splide__slide div{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.splide__slide div > *{
+    width: 80%;
+    text-align: center;
+}
+
+.splide__slide figure {
+    border-radius: 20px;
+    overflow: hidden;
+}
+/* end of splider styles */
+
+.education {
+    justify-content: space-evenly;
+}
+
+.achievments figure {
+    height: 50%;
+}
+
+.footer{
+    width: 80px;
+    aspect-ratio: 1;
+    margin: 20px;
+    position: sticky;
+    bottom: 20px;
+    left: 100%;
+    z-index: 30;
+    overflow: hidden;
+}
+
+.footer .icon{
+    position: absolute;
+    font-size: 35px;
+    width: 35px;
+}
+.icon__link{
+    right: -100%;
+    transition: right .5s;
+}
+.icon__git{
+    bottom: -100%;
+    transition: bottom .5s;
+}
+
+.active .icon__link{
+    top: 0;
+    right: 0;
+    transition: right .5s
+}
+.active .icon__git{
+    bottom: 0;
+    left: 0;
+    transition: bottom .5s;
+}
+
+/* media queries para maquetado desktop */
+@media (min-width: 400px) {
+    a {
+        font-size: 25px;/* tamaño de los iconos */
+        width: 25px;/* ancho de los imagen */
+    }
+}
+
+@media (min-width: 850px) {
+
+    a {
+        font-size: 30px; /* tamaño de los iconos */
+        width: 30px; /* ancho de los imagen */
+        position: relative;
+    }
+
+    a:hover {
+        transform: scale(1.25);
+    }
+
+    a:hover::after {
+        background-color: var(--secundary-color);
+        position: absolute;
+        font-size: 16px;
+        width: max-content;
+        border: 1px solid;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    p,
+    li{
+        font-size: var(--desktop-font);
+        font-weight: var(--desktop-font-weight);
+    }
+
+    .header__nav a:hover::after{
+        top: 0;
+        left: 40px;
+    }
+    .dark a:hover::after {
+        background-color: var(--primary-color);
+    }
+
+    .header__nav {
+        height: 100vh;
+        max-height: 700px;
+        width: 50px;
+        flex-direction: column;
+
+    }
+
+    .nav__start,
+    .nav__center,
+    .nav__end {
+        flex-direction: column;
+    }
+
+    /* estilo para tooltips */
+
+    .icon__home:hover::after {
+        content: 'Ir al Inicio';
+    }
+
+    .icon__about:hover::after {
+        content: 'Sobre Mí';
+    }
+
+    .icon__skills:hover::after {
+        content: 'Habilidades';
+    }
+
+    .icon__projects:hover::after {
+        content: 'Proyectos';
+    }
+
+    .icon__education:hover::after {
+        content: 'Educación';
+    }
+
+    .icon__achievments:hover::after {
+        content: 'Logros';
+    }
+
+    .icon__cv:hover::after {
+        content: 'Descargar mi CV';
+    }
+
+    .icon__language:hover::after {
+        content: 'Cambio de Idioma';
+    }
+
+    .icon__volume:hover::after {
+        content: 'Activar/Desactivar sonido';
+    }
+
+    .icon__mode:hover::after {
+        content: 'Modo Oscuro/Claro';
+    }
+
+    .icon__link:hover::after {
+        bottom: 45px;
+        right: 0;
+        content: 'Enlace a mi LinkedIn';
+    }
+
+    .icon__git:hover::after {
+        top: 0;
+        right: 40px;
+        content: 'Enlace a mi GitHub';
+    }
+
+    /* fin de estilo para tooltips */
+
+    .section {
+        padding: 50px 50px 50px 100px;
+        display: grid;
+    }
+
+    .front {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        align-items: center;
+    }
+
+    .front h1 {
+        grid-column: span 2;
+    }
+
+    .front h2 {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: left;
+    }
+
+    .front p {
+        grid-column: 1;
+        grid-row: 3;
+        text-align: left;
+        align-self: self-start;
+    }
+
+    .front figure {
+        grid-column: 2;
+        grid-row: 2 / span 2;
+    }
+
+    .about {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr 4fr);
+        align-items: center;
+    }
+
+    .about h2{
+        grid-column: span 2;
+    }
+    .about p{
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .about h3{
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .about ul{
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .about iframe{
+        grid-column: 2;
+        grid-row: 2 / span 4;
+        width: 100%;
+        height: 100%;
+    }
+
+    .skills{
+        grid-template-columns: repeat(1, 2fr 3fr);
+        grid-template-rows: repeat(1, 1fr 5fr);
+        align-items: center;
+    }
+
+    .skill h2{
+        grid-column: span 2;
+    }
+    .soft__skills{
+        grid-column: 1;
+        grid-row: 2 / span 4;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .soft__skills li{
+        margin: 10px 0;
+    }
+    .hard__skills{
+        grid-column: 2;
+        grid-row: 2 / 4;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        height: 80%;
+    }
+
+    .projects{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 5fr;
+    }
+
+    .splide__slide{
+        flex-direction: row;
+    }
+
+    .education{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr 5fr);
+        align-items: center;
+    }
+    .education h2{
+        grid-column: span 2;
+        align-self: self-end;
+    }
+
+    .education article {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .education li{
+        margin: 10px 0;
+    }
+
+    .achievments{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr 5fr);
+        align-items: center;
+    }
+    .achievments h2{
+        grid-column: span 2;
+        align-self: self-end;
+    }
+    .achievments figure{
+        justify-self: center;
+    }
+}

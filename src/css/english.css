@@ -1,0 +1,60 @@
+/* media queries for desktop */
+
+@media (min-width : 850px) {
+    /* styles for tooltips */
+
+    .icon__home:hover:after {
+        content: 'Go To Home';
+    }
+
+    .icon__about:hover:after {
+        content: 'About Me';
+    }
+
+    .icon__skills:hover:after {
+        content: 'Skills';
+    }
+
+    .icon__projects:hover:after {
+        content: 'Projects';
+    }
+
+    .icon__education:hover:after {
+        content: 'Education';
+    }
+
+    .icon__achievments:hover:after {
+        content: 'Achievments';
+    }
+
+    .icon__cv:hover:after {
+        content: 'Download my CV';
+    }
+
+    .icon__language:hover:after {
+        content: 'Change Language';
+    }
+
+    .icon__volume:hover:after {
+        content: 'Sound On/Off';
+    }
+
+    .icon__mode:hover:after {
+        content: 'Dark/Bright Modes';
+    }
+
+    .icon__link:hover:after {
+        bottom: 45px;
+        right: 0;
+        content: 'Link to my LinkedIn';
+    }
+
+    .icon__git:hover:after {
+        top: 0;
+        right: 40px;
+        content: 'Link to my GitHub';
+    }
+
+    /* end of styles for tooltips */
+
+}
